@@ -3,7 +3,7 @@ export type ActionCounter =
 // | { type: 'counter/plus' }
 // | { type: 'counter/minus10' }
 // | { type: 'counter/plus10' }
-// payloaad (полезная нагрузка)- то, значение, которое понадобится при выполнении действия
+// payload (полезная нагрузка)- то, значение, которое понадобится при выполнении действия
 | { type: 'counter/changeX', payload: number }
 
 

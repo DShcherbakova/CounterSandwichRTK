@@ -1,29 +1,30 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../redux/store';
+import { RootState } from '../reduxRTK/storeRTK';
 import '../index.css';
+import { addIngredient, deleteIngredient } from '../reduxRTK/sandwichSlice';
 
 const Sandwich = () => {
     const ingredients = useSelector((state: RootState) => state.sandwich.ingredients);
     const dispatch = useDispatch();
 
     function handleAddBread() {
-        dispatch({ type: 'sandwich/addIngredient', payload: 'bread' });
+        dispatch(addIngredient('bread'));
     }
 
     function handleAddCheese() {
-        dispatch({ type: 'sandwich/addIngredient', payload: 'cheese' });
+        dispatch(addIngredient('cheese'));
     }
 
     function handleAddSalami() {
-        dispatch({ type: 'sandwich/addIngredient', payload: 'salami' });
+        dispatch(addIngredient('salami'));
     }
 
     function handleAddSauce() {
-        dispatch({ type: 'sandwich/addIngredient', payload: 'sauce' });
+        dispatch(addIngredient('sauce'));
     }
 
     function handleDeleteIngredient() {
-        dispatch({ type: 'sandwich/deleteIngredient' });
+        dispatch(deleteIngredient());
     }
     
     return (
